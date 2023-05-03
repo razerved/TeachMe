@@ -1,19 +1,64 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.text.DecimalFormat;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        enterYorData();
+        enterSymbol('A');
+        enterSymbol();
+        bMI(65,1.80);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
         }
+
+    private static void enterYorData() {
+        System.out.print("Please enter your Name: ");
+        String name = new Scanner(System.in).next();
+        System.out.print("Please enter your lastName: ");
+        String lastName = new Scanner(System.in).next();
+        System.out.print("Please enter your age: ");
+        int age = new Scanner(System.in).nextInt();
+        System.out.print("Please enter your height: ");
+        double height  = new Scanner(System.in).nextDouble();
+        System.out.print("Please enter your weight: ");
+        double weight = new Scanner(System.in).nextDouble();
+
+        System.out.println("Name: " + name + "\n" +
+                           "lastName: " + lastName + "\n" +
+                           "Age: " + age + "\n" +
+                           "Height: " + height + "\n" +
+                           "Weight: " + weight);
+
     }
+
+    static void enterSymbol(char a){
+        System.out.println( a + "-" + (int)a );
+    }
+    static void enterSymbol(){
+        System.out.print("Please enter your symbol: ");
+        char a = new Scanner(System.in).next().charAt(0);
+        System.out.println( (int)a );
+    }
+
+    static void bMI(double weight, double height ){
+        DecimalFormat decimalFormat = new DecimalFormat( "#.#" );
+        double mass = weight / (height * height);
+        String result = decimalFormat.format(mass);
+
+        if (mass < 18.5) {
+            System.out.println("Underweight: " + result);
+        }
+        else if (mass < 25) {
+            System.out.println("Normal: " + result);
+        }
+        else if (mass < 30) {
+            System.out.println("Overweight: " + result);
+        }
+        else {
+            System.out.println("Obese: " + result);
+        }
+
+    }
+
 }
