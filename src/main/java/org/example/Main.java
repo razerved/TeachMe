@@ -1,14 +1,13 @@
 package org.example;
 
 import java.text.DecimalFormat;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        enterYorData();
-        enterSymbol('A');
-        enterSymbol();
-        bMI(65,1.80);
+        //enterYorData();
+        //enterSymbol('A');
+        //enterSymbol();
+        //bMI(65,1.80);
 
         }
 
@@ -38,13 +37,12 @@ public class Main {
     static void enterSymbol(){
         System.out.print("Please enter your symbol: ");
         char a = new Scanner(System.in).next().charAt(0);
-        System.out.println( (int)a );
+        System.out.println( a + "-" + (int)a );
     }
 
     static void bMI(double weight, double height ){
-        DecimalFormat decimalFormat = new DecimalFormat( "#.#" );
         double mass = weight / (height * height);
-        String result = decimalFormat.format(mass);
+        String result = new DecimalFormat( "#.#" ).format(mass);
 
         if (mass < 18.5) {
             System.out.println("Underweight: " + result);
