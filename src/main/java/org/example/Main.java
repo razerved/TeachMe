@@ -7,10 +7,9 @@ public class Main {
         //enterYorData();
         //enterSymbol('A');
         //enterSymbol();
-        //bMI(65,1.80);
+        bMI(65,180);
 
         }
-
     private static void enterYorData() {
         System.out.print("Please enter your Name: ");
         String name = new Scanner(System.in).next();
@@ -40,9 +39,10 @@ public class Main {
         System.out.println( a + "-" + (int)a );
     }
 
-    static void bMI(double weight, double height ){
-        double mass = weight / (height * height);
-        String result = new DecimalFormat( "#.#" ).format(mass);
+    static void bMI(double weight, int height ){
+        double h = (double)height/100;
+        double mass = weight / (h * h);
+        String result = new DecimalFormat( "##.#" ).format(mass);
 
         if (mass < 18.5) {
             System.out.println("Underweight: " + result);
