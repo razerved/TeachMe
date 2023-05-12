@@ -1,6 +1,8 @@
 package org.example;
 
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class Main {
@@ -17,6 +19,7 @@ public class Main {
         getSumNumberLoop();
         getNotInteger();
         fromMoreToLess();*/
+
     }
 
 
@@ -59,72 +62,42 @@ public class Main {
         }
     }
     private static void getSeasonByIf(int numMonths) {
-        if(numMonths==1){
-            System.out.println("January");
-        }else if (numMonths==2){
-            System.out.println("February");
-        }else if (numMonths==3){
-            System.out.println("March");
-        }else if (numMonths==4){
-            System.out.println("April");
-        }else if (numMonths==5){
-            System.out.println("May");
-        }else if (numMonths==6) {
-            System.out.println("June");
-        }else if (numMonths==7) {
-            System.out.println("July");
-        }else if (numMonths==8) {
-            System.out.println("August");
-        }else if (numMonths==9) {
-            System.out.println("September");
-        }else if (numMonths==10) {
-            System.out.println("October");
-        }else if (numMonths==11) {
-            System.out.println("November");
-        }else if (numMonths==12) {
-            System.out.println("December");
+        if (numMonths <= 2 || numMonths == 12) {
+            System.out.println("Winter");
+        } else if (numMonths > 2 && numMonths <= 5) {
+            System.out.println("Spring");
+        } else if (numMonths > 5 && numMonths <= 8) {
+            System.out.println("Summer");
+        } else if (numMonths > 8 && numMonths <= 11) {
+            System.out.println("Autumn");
+        } else {
+            System.out.println("Sorry please try another Number");
         }
 
     }
     private static void getSeason(int numMonths) {
 
         switch (numMonths){
-            case 1:
-                System.out.println("January");
+            case 1, 2, 12:
+                System.out.println("Winter");
                 break;
-            case 2:
-                System.out.println("February");
+
+            case 3, 4, 5:
+                System.out.println("Spring");
                 break;
-            case 3:
-                System.out.println("March");
+
+            case 6, 7, 8:
+                System.out.println("Summer");
                 break;
-            case 4:
-                System.out.println("April");
+
+            case 9, 10, 11:
+                System.out.println("Autumn");
                 break;
-            case 5:
-                System.out.println("May");
+
+            default:
+                System.out.println("mistake");
                 break;
-            case 6:
-                System.out.println("June");
-                break;
-            case 7:
-                System.out.println("July");
-                break;
-            case 8:
-                System.out.println("August");
-                break;
-            case 9:
-                System.out.println("September");
-                break;
-            case 10:
-                System.out.println("October");
-                break;
-            case 11:
-                System.out.println("November");
-                break;
-            case 12:
-                System.out.println("December");
-                break;
+
         }
 
     }
