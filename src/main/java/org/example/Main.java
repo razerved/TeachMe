@@ -1,7 +1,5 @@
 package org.example;
 
-import com.sun.source.tree.IfTree;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -16,7 +14,7 @@ public class Main {
         System.out.println("put your number for search in array");
         searchArrayNumb(b, scanner().nextInt());*/
 
-
+        sortedBubble();
         //createNewArrayWithoutScanNumber(scanner());
         //createArrayWithScan(scanner());
         //differenceBetweenArray();
@@ -145,6 +143,31 @@ public class Main {
             System.out.println("Second Array bigger");
         } else
             System.out.println(" First Array equals Second Array ");
+    }
+
+
+
+    private static void sortedBubble(){
+        int[] array = { 300, 163, 184, 191, 174 };
+
+        int lef = 0;
+        boolean isSorted = false;
+
+        while (!isSorted) {
+            isSorted = true;
+
+            for (int i = 1; i < array.length; i++) {
+                if (array[i] < array[i - 1]) {
+                    lef = array[i];
+                    array[i] = array[i - 1];
+                    array[i - 1] = lef;
+                    isSorted = false;
+                }
+            }
+        }
+        for (int o : array){
+            System.out.println(o + " ");
+        }
     }
 
 
