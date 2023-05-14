@@ -19,7 +19,7 @@ public class Main {
 
         //createNewArrayWithoutScanNumber(scanner());
         //createArrayWithScan(scanner());
-        differenceBetweenArray();
+        //differenceBetweenArray();
 
     }
 
