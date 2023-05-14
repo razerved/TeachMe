@@ -1,5 +1,7 @@
 package org.example;
 
+import com.sun.source.tree.IfTree;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -16,7 +18,8 @@ public class Main {
 
 
         //createNewArrayWithoutScanNumber(scanner());
-        createArrayWithScan(scanner());
+        //createArrayWithScan(scanner());
+        differenceBetweenArray();
 
     }
 
@@ -51,19 +54,28 @@ public class Main {
 
     private static void createNewArrayWithoutScanNumber(Scanner scanner){
         int[] array = { 1, 4, 3, 8, 5 };
-        int[] finalArray = new int[5];
         int a = scanner().nextInt();
+        int count = 0;
+        for (int q : array){
+            if (q == a){
+                count++;
+            }
+        }
+        if (count == 0){
+            System.out.println("D'oh");
+            return;
+        }
+        int[] finalArray = new int[array.length - count];
+        int index = 0;
         for (int x = 0; x < array.length; x++){
 
-            if (a == array[x]){
-                continue;
+            if (array[x] != a){
+                finalArray[index++] = array[x];
             }
 
-            finalArray[x] = array[x];
         }
-        // TODO придумать отбивку в случае если в массиве " такого числа нет - выведите сообщения об этом "
-        for (int o = 0; o < finalArray.length; o++) {
-            System.out.println( finalArray[o] );
+        for (int o : finalArray) {
+            System.out.print( o + " " );
         }
     }
 
@@ -72,16 +84,68 @@ public class Main {
     private static void createArrayWithScan(Scanner scanner){
         int[] array = new int[scanner().nextInt()];
         int x = 278;
-        for (int i = 0; i < array.length; i++ ){
+
+        for (int i = 0; i < array.length; i++){
             array[i] = (int)(Math.random() * x );
+            System.out.print( array[i] + " " );
+
         }
+        /*int min = array[0];
+        int max = array[0];
+        int sum = array[0];
+        for (int i = 1; i < array.length; i++ ){
+            if (array[i] < min){
+                min = array[i];
+            }
+            if (array[i] > max){
+                max = array[i];
+            }
+            sum = sum + array[i];
+        }
+        System.out.println();
+        System.out.println( "Мах: " + max );
+        System.out.println( "Average: " + sum/array.length );
+        System.out.println( "Мин: " + min );*/
+
+
+        System.out.println();
         System.out.println( "Мах: " + Arrays.stream(array).max() );
+        System.out.println( "Average: " + Arrays.stream(array).average());
         System.out.println( "Мин: " + Arrays.stream(array).min() );
     }
 
 
-    private static void differenceBetweenArray(){
+    private static void differenceBetweenArray() {
+        int[] array = {1, 2, 3, 4, 5}; //3
+        int[] array2 = {5, 6, 7, 8, 9}; //7
+        int sumArray1 = 0;
+        int sumArray2 = 0;
 
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+            sumArray1 = array[i] + sumArray1;
+
+        }
+
+        System.out.println();
+        System.out.print("this averageArray1: " + sumArray1/array.length);
+        System.out.println();
+
+        for (int x = 0; x < array2.length; x++) {
+            System.out.print(array2[x] + " ");
+            sumArray2 = array2[x] + sumArray2;
+        }
+
+        System.out.println();
+        System.out.println("this averageArray2: " + sumArray2/array2.length);
+
+        if (sumArray1 > sumArray2) {
+            System.out.println("First Array bigger ");
+        } else if (sumArray1 < sumArray2) {
+            System.out.println("Second Array bigger");
+        } else
+            System.out.println(" First Array equals Second Array ");
     }
+
 
 }
