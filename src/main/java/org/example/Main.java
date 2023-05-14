@@ -14,7 +14,8 @@ public class Main {
         System.out.println("put your number for search in array");
         searchArrayNumb(b, scanner().nextInt());*/
 
-        sortedBubble();
+        //sortedBubble();
+        sortedShake();
         //createNewArrayWithoutScanNumber(scanner());
         //createArrayWithScan(scanner());
         //differenceBetweenArray();
@@ -168,6 +169,40 @@ public class Main {
         for (int o : array){
             System.out.println(o + " ");
         }
+    }
+
+    private static void sortedShake(){
+        int[] shake = { 300, 200, 100, 320,101 };
+
+        int temp = 0;
+        int leftSide = 0;
+        int rightSide = shake.length - 1;
+
+        do {
+
+            for (int i = leftSide; i < rightSide; i++){
+                if (shake[i] > shake[i + 1]){
+                    temp = shake[i];
+                    shake[i] = shake[i + 1];
+                    shake[i + 1] = temp;
+                }
+            }
+            rightSide--;
+
+            for (int y = rightSide; y > leftSide; y--){
+                if (shake[y] < shake[y -1] ){
+                    temp = shake[y];
+                    shake[y] = shake[y -1];
+                    shake[y - 1] = temp;
+                }
+            }
+            leftSide++;
+
+        }while (leftSide < rightSide);
+            for (int i: shake){
+                System.out.println(i);
+            }
+
     }
 
 
