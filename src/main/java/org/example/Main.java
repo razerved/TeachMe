@@ -199,9 +199,9 @@ public class Main {
             leftSide++;
 
         }while (leftSide < rightSide);
-            for (int i: shake){
-                System.out.println(i);
-            }
+        for (int i: shake){
+            System.out.println(i);
+        }
 
     }
 
