@@ -19,6 +19,7 @@ public class Main {
         getSumNumberLoop();
         getNotInteger();
         fromMoreToLess();*/
+        getSumNumberLoop();
 
     }
 
@@ -129,7 +130,7 @@ public class Main {
         System.out.print("Please, enter your number: ");
         int number = new Scanner(System.in).nextInt();
         int sum = 0;
-        for (int i = 1; i <= number; i++){
+        for (int i = 1; i < number; i++){
             sum = sum + i;
         }
         System.out.println(sum);
