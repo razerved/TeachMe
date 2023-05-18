@@ -1,5 +1,7 @@
 package org.example;
 
+import static java.lang.String.valueOf;
+
 public class CreditCard {
 
     /**
@@ -16,35 +18,50 @@ public class CreditCard {
      * Выведите на экран текущее состояние всех трех карточек.
      */
 
-    private double money;
-    private int coun;
-    private int cartNumber;
+    private double currentAmount;
+    private String scoreNumber;
+    private String cartNumber;
 
-    public CreditCard() {
+
+    public CreditCard(double currentAmount, String scoreNumber) {
+        this.currentAmount = currentAmount;
+        this.scoreNumber = scoreNumber;
 
     }
-
-    public double getMoney() {
-        return money;
+    public CreditCard(double currentAmount, String scoreNumber, String cartNumber) {
+        this.currentAmount = currentAmount;
+        this.scoreNumber = scoreNumber;
+        this.cartNumber = cartNumber;
     }
 
-    public void setMoney(double money) {
-        this.money = money;
+    public String getCurrentAmount() {
+        return valueOf(currentAmount) + " руб";
     }
 
-    public int getCoun() {
-        return coun;
+    public void setCurrentAmount(double currentAmount) {
+        this.currentAmount = this.currentAmount + currentAmount;
     }
 
-    public void setCoun(int coun) {
-        this.coun = coun;
+    public void debitingAmoubt(double debiting){
+        this.currentAmount  = this.currentAmount - debiting;
     }
 
-    public int getCartNumber() {
+    public void setAmount(double currentAmount) {
+
+    }
+    public String getScoreNumber() {
+        return scoreNumber;
+    }
+
+    public void setScoreNumber(String scoreNumber) {
+        this.scoreNumber = scoreNumber;
+    }
+
+    public String getCartNumber() {
         return cartNumber;
     }
 
-    public void setCartNumber(int cartNumber) {
+    public void setCartNumber(String cartNumber) {
         this.cartNumber = cartNumber;
     }
 
