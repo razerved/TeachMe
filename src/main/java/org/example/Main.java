@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //tripleArray();
-        chessFill();
+        tripleArray();
+        //chessFill();
     }
 
 
@@ -14,7 +14,15 @@ public class Main {
     }
 
     static void tripleArray(){
-        int[][][] triple = new int[3][3][3];
+        int[][][] triple = new int[][][]{
+                {
+                {1, 2, 3},
+                {2, 3, 4},
+                {5, 6, 7}
+            }
+        };
+
+
         int number = scanner().nextInt();
 
 
@@ -24,7 +32,7 @@ public class Main {
             {
                 for (int finalDimension = 0; finalDimension < triple[outerDimension][innerDimension].length; finalDimension++)
                 {
-                    triple[outerDimension][innerDimension][finalDimension]=number;
+                   triple[outerDimension][innerDimension][finalDimension]= triple[outerDimension][innerDimension][finalDimension] + number;
                     System.out.print(triple[outerDimension][innerDimension][finalDimension] + " - ");
                 }
                 System.out.println();
