@@ -1,10 +1,28 @@
 package org.example.figures;
 
-public class Rectangle extends Figure {
+public class Rectangle implements Figure {
 
-    public Rectangle() {
+    int l;
+    int w;
+
+    public Rectangle(int l, int w) {
+        this.l = l;
+        this.w = w;
     }
 
+    @Override
+    public void areaCalculation() {
 
+    }
+
+    @Override
+    public void radius() {
+
+    }
+
+    @Override
+    public String mas() {
+        return null;
+    }
 
 }

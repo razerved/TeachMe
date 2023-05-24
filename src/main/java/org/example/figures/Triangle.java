@@ -1,20 +1,28 @@
 package org.example.figures;
 
-public class Triangle extends Figure{
+public class Triangle implements Figure{
 
-    public Triangle() {
-    }
+    int a;
+    int b;
 
-    public Triangle(int height, int width, int round, int partLength) {
-        super(height, width, round, partLength);
+    public Triangle(int a, int b) {
+        this.a = a;
+        this.b = b;
     }
 
     @Override
-    void areaCalculation() {
-        super.areaCalculation();
+    public void areaCalculation() {
+
     }
 
+    @Override
+    public void radius() {
 
+    }
 
+    @Override
+    public String mas() {
+        return null;
+    }
 
 }

@@ -1,15 +1,16 @@
 package org.example;
 
 import org.example.figures.Circle;
-import org.example.figures.Figure;
 import org.example.figures.Rectangle;
 import org.example.figures.Triangle;
 
 public class Main {
     public static void main(String[] args) {
-        Figure nyTriangle = new Triangle();
-        Figure nyCircle = new Circle();
-        Figure nyRectangle = new Rectangle();
+        Triangle nyTriangle = new Triangle(2, 4);
+        Circle nyCircle = new Circle(10, 2);
+        Rectangle nyRectangle = new Rectangle(15,20);
+
+
 
 
 
