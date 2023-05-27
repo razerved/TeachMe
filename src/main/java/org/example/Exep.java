@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.regex.Pattern;
+
 public class Exep {
 
     private static String login;
@@ -17,26 +19,22 @@ public class Exep {
             }
         }
 
-        for (int x = 0; x < password.length(); x++){
-            if (x > 19){
+        for (int i = 0; i < password.length(); i++){
+            if (i > 19){
                 throw new ArithmeticException("WrongPasswordException");
-            }else if (password.contains(" ") | !password.matches(regex)){
+            }else if (password.contains(" ") | !Pattern.compile(regex).matcher(password).find()){
                 throw new ArithmeticException("WrongPasswordException");
             }else {
                 Exep.password = password;
             }
         }
 
-
-        for (int i = 0; i < confirmPassword.length(); i++){
-            if (i > 19){
-                throw new ArithmeticException("WrongPasswordException");
-            }else if (confirmPassword.contains(" ") | !confirmPassword.matches(regex) | !confirmPassword.equals(password)){
-                throw new ArithmeticException("WrongPasswordException");
-            }else {
-                Exep.confirmPassword = confirmPassword;
-            }
+        if (!confirmPassword.equals(password)){
+            throw new ArithmeticException("WrongConfPasswordException");
+        }else {
+            Exep.confirmPassword = confirmPassword;
         }
+
 
     }
 

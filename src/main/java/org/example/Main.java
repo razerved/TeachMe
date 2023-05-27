@@ -19,9 +19,10 @@ public class Main {
 
 
         Exep first = new Exep();
-        first.setLogin("12334567891234567890");
+        first.exept("12334567891234567890", "awd1awd", "awd1awd");
+        /*first.setLogin("12334567891234567890");
 
-        first.setPassword("1234");
+        first.setPassword("1234");*/
 
     }
 }
