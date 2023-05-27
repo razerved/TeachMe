@@ -1,10 +1,11 @@
 package org.example.figures;
 
- interface Figure {
+ public interface  Figure {
 
-    void areaCalculation();
 
-    void radius();
+    int perimeter();
+
+    int radius();
 
     String mas();
 

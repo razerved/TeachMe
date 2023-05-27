@@ -2,27 +2,32 @@ package org.example.figures;
 
 public class Triangle implements Figure{
 
-    int a;
-    int b;
+    private int sideA;
+    private int sideB;
+    private int sideC;
 
-    public Triangle(int a, int b) {
-        this.a = a;
-        this.b = b;
+    public Triangle(int sideA, int sideB, int sideC) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+    }
+
+
+    public int radius() {
+        int i = (int) ((sideA + sideB + sideC) / 2.0);
+        int area = (int)Math.sqrt(i * (i - sideA) * (i - sideB) * (i - sideC));
+        return area;
     }
 
     @Override
-    public void areaCalculation() {
-
-    }
-
-    @Override
-    public void radius() {
-
+    public int perimeter() {
+        int perimeter = sideA + sideB + sideC;
+        return perimeter;
     }
 
     @Override
     public String mas() {
-        return null;
+        return "Это треугольник";
     }
 
 }

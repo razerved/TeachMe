@@ -1,25 +1,27 @@
 package org.example;
 
 import org.example.figures.Circle;
+import org.example.figures.Figure;
 import org.example.figures.Rectangle;
 import org.example.figures.Triangle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        Triangle nyTriangle = new Triangle(2, 4);
-        Circle nyCircle = new Circle(10, 2);
-        Rectangle nyRectangle = new Rectangle(15,20);
+
+        List<Figure> list = new ArrayList<>();
+        list.add(new Triangle(2, 4,4));
+        list.add(new Triangle(2, 6,6));
+        list.add(new Circle(10));
+        list.add(new Rectangle(15,20));
+        list.add(new Rectangle(15,30));
 
 
+        System.out.println("сумма периметра всех фигур " + (list.get(0).perimeter()+list.get(1).perimeter()
+                +list.get(2).perimeter()+list.get(3).perimeter()+list.get(4).perimeter()));
 
 
-
-
-        /**Написать иерархию классов «Фигуры».
-         Фигура -> Треугольник -> Прямоугольник -> Круг.
-         Реализовать ф-ю подсчета площади для каждого типа фигуры и подсчет
-         периметра.
-         Создать массив из 5 фигур.
-         Вывести на экран сумму периметра всех фигур в массиве.**/
     }
 }

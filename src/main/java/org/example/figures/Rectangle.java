@@ -2,27 +2,31 @@ package org.example.figures;
 
 public class Rectangle implements Figure {
 
-    int l;
-    int w;
+    private int width;
+    private int height;
 
-    public Rectangle(int l, int w) {
-        this.l = l;
-        this.w = w;
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+
+
+    @Override
+    public int radius() {
+        int area = width * height;
+        return area;
     }
 
     @Override
-    public void areaCalculation() {
-
-    }
-
-    @Override
-    public void radius() {
-
+    public int perimeter() {
+        int perimeter = (width + height) * 2;
+        return perimeter;
     }
 
     @Override
     public String mas() {
-        return null;
+        return "Это прямоугольник";
     }
 
 }
