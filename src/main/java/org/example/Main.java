@@ -12,9 +12,16 @@ public class Main {
         abonent2.setName("Dumbledore");
         abonent3.setName("Voldemort");
 
-        abonent1.sendMessage("+790001112277", "90001112233");
+        abonent1.sendMessage(abonent3.getNumber(), abonent1.getNumber(), abonent2.getNumber());
         abonent1.receiveCall(abonent3.getName());
         abonent1.getNumber();
+
+
+
+        Exep first = new Exep();
+        first.setLogin("12334567891234567890");
+
+        first.setPassword("1234");
 
     }
 }
