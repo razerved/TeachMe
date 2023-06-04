@@ -7,6 +7,10 @@ public class Main {
         tryReplace("1234-qwe-5678-asd-1a2w");
         tryToTrim("1234-qwe-5678-asd-1a2w");
         tryToTrimStringBilder("1234-qwe-5678-asd-1a2w");
+        tryFindABC("1234-qwe-5678-asd-1a2w");
+        tryFindFive("1234-qwe-5678-asd-1a2w");
+        tryFindOneATwoB("1234-qwe-5678-asd-1a2w");
+
 
     }
 }
