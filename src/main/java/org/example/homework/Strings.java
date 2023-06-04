@@ -33,9 +33,31 @@ public class Strings {
         System.out.println("String Buf: " + stringBilder);
     }
 
-    public static void someDoc5(){
-        String docum = "1234-qwe-5678-asd-1a2w";
+    public static void tryFindABC(String number){
+        if (number.contains("abc")|| number.contains( "ABC" )){
+            System.out.print("The number of the document contains 'abc' or 'ABC'");
+        }else {
+            System.out.println("The number of the document doesn't contain 'abc' or 'ABC'.");
+        }
     }
+
+    public static void tryFindFive(String number){
+        if (number.startsWith("555")){System.out.print("The number of the document starts with '555'");
+        }
+        else {System.out.print("The number of the document doesn't start with '555'");
+        }
+    }
+
+    public static void tryFindOneATwoB(String number) {
+        if (number.endsWith("1a2b")){System.out.print("The number of the document ended with '1a2b'");
+        }
+        else {System.out.print("The number of the document doesn't end with '1a2b'");
+        }
+
+
+    }
+
+
 
 
 }
