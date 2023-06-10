@@ -1,19 +1,43 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
+import static org.example.Game.isBoardFull;
+
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scan = new Scanner(System.in);
+        Game game = new Game();
+        int row, col;
+        boolean validInput;
+        boolean endGame = false;
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        while (!endGame) {
+            game.printBoard();
+            validInput = false;
+            while (!validInput) {
+                System.out.println("Player " + game.currentPlayerMark + ", enter your mark!");
+                row = scan.nextInt() - 1;
+                col = scan.nextInt() - 1;
+                validInput = game.placeMark(row, col);
+                if (!validInput) {
+                    System.out.println("Bad choice. Try again.");
+                }
+            }
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+            if (game.checkForWin()) {
+                System.out.println("Super! Player " + game.currentPlayerMark + " wins!");
+                endGame = true;
+            } else if (isBoardFull(game.board)) {
+                System.out.println("No b wins!");
+                endGame = true;
+            } else {
+                game.changePlayer();
+            }
         }
+        scan.close();
     }
+
+
 }
